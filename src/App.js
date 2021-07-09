@@ -1,6 +1,4 @@
-import axios from "axios"
 import React from "react"
-import WeatherCard from "./Components/WeatherCard"
 import GetWeather from "./Components/GetWeather"
 import "./App.css"
 
@@ -23,8 +21,6 @@ class App extends React.Component {
   }
 
   render() {
-    const self = this
-
     return <div className="App">
       <GetWeather/>
     </div>

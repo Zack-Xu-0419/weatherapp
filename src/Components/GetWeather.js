@@ -75,8 +75,6 @@ class GetWeather extends React.Component {
 
 
     render() {
-        const self = this
-        const p = this.props
         return (
             <div className="WeatherCard">
                 <Button className='search' onClick={this.setGPS}>

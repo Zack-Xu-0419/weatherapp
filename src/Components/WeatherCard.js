@@ -30,10 +30,8 @@ class WeatherCard extends React.Component {
                             Feels like: {props.feelsLike} C°
                         </Card.Description>
                         <Card.Content extra>
-                            <a>
                                 <Icon name='user' />
                                 props.country
-                            </a>
                         </Card.Content>
                     </Card.Content>
 
