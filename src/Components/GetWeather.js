@@ -25,15 +25,10 @@ class GetWeather extends React.Component {
     componentDidMount() {
         this.getData()
         const self = this
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                self.setState({ longitude: position.coords.longitude, latitude: position.coords.latitude })
-            })
-        }
+        navigator.geolocation.getCurrentPosition(function (position) {
+            self.setState({ longitude: position.coords.longitude, latitude: position.coords.latitude })
+        })
 
-        else {
-            console.log("Browser doesn't support location")
-        }
     }
 
     getData() {
