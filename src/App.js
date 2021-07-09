@@ -23,7 +23,6 @@ class App extends React.Component {
   }
 
   render() {
-    const self = this
 
     return <div className="App">
       <GetWeather/>
