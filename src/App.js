@@ -1,5 +1,8 @@
+import axios from "axios"
 import React from "react"
 import WeatherCard from "./Components/WeatherCard"
+import GetWeather from "./Components/GetWeather"
+import "./App.css"
 
 class App extends React.Component {
 
@@ -8,38 +11,24 @@ class App extends React.Component {
 
     this.state = {
       longitude: "Loading...",
-      latitude: "Loading..."
+      latitude: "Loading...",
+      currentweather: [],
+      gpsEnabled: false,
+      name: "Chengdu"
     }
-
   }
 
   componentDidMount() {
-    const self = this
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        self.setState({ longitude: position.coords.latitude, latitude: position.coords.longitude })
-      })
-    }
-    else {
-      console.log("Browser doesn't support location")
-    }
+    
   }
 
   render() {
-    return (<div>
+    const self = this
 
-      <h1>Longitude: {this.state.longitude}</h1>
-      <h1>Latitude: {this.state.latitude}</h1>
-      <WeatherCard 
-        icon="09d"
-        name="Chengdu"
-        temperature="30"
-        description="light rain"
-        feelsLike="99"
-      />
-
+    return <div className="App">
+      <GetWeather/>
+    </div>
       
-    </div>)
   }
 }
 

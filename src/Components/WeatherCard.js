@@ -1,8 +1,9 @@
 import React from "react"
 import { Card, Icon, Image } from 'semantic-ui-react'
+import "../App.css"
 
 const styles = {
-    image:{
+    image: {
         textAlign: 'center',
         height: '217px',
         padding: '70px'
@@ -18,7 +19,7 @@ class WeatherCard extends React.Component {
 
         return (
             <div className="WeatherCard">
-                <Card>
+                <Card style={{ margin: "auto" }}>
                     <Image as="i" className={"owi owi-5x owi-" + props.icon} style={styles.image} />
                     <Card.Content>
                         <Card.Header>{props.name} - {props.temperature} C°</Card.Header>
@@ -28,7 +29,14 @@ class WeatherCard extends React.Component {
                         <Card.Description>
                             Feels like: {props.feelsLike} C°
                         </Card.Description>
+                        <Card.Content extra>
+                            <a>
+                                <Icon name='user' />
+                                props.country
+                            </a>
+                        </Card.Content>
                     </Card.Content>
+
                 </Card>
             </div>
         )
