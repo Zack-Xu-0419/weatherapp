@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import WeatherCard from "./Components/WeatherCard"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      longitude: "Loading...",
+      latitude: "Loading..."
+    }
+
+  }
+
+  componentDidMount() {
+    const self = this
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        self.setState({ longitude: position.coords.latitude, latitude: position.coords.longitude })
+      })
+    }
+    else {
+      console.log("Browser doesn't support location")
+    }
+  }
+
+  render() {
+    return (<div>
+
+      <h1>Longitude: {this.state.longitude}</h1>
+      <h1>Latitude: {this.state.latitude}</h1>
+      <WeatherCard 
+        icon="09d"
+        name="Chengdu"
+        temperature="30"
+        description="light rain"
+        feelsLike="99"
+      />
+
+      
+    </div>)
+  }
 }
 
 export default App;
