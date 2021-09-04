@@ -1,3 +1,6 @@
+Here's the working website hosted on Netlify: https://hungry-benz-b93e3d.netlify.app/
+Location might not work on Safari
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
