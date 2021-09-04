@@ -1,5 +1,6 @@
 Here's the working website hosted on Netlify: https://hungry-benz-b93e3d.netlify.app/
 Location might not work on Safari
+Type into the textbox and the weather will change realtime
 
 # Getting Started with Create React App
 
