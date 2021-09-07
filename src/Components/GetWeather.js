@@ -34,7 +34,7 @@ class GetWeather extends React.Component {
     getData() {
         const self = this
         if (this.state.gpsEnabled === true) {
-            axios.get("https://api.openweathermap.org/data/2.5/weather?lat=" + this.state.latitude + "&lon=" + this.state.longitude + "&appid=45ebc38311972be87df6b3da347c5fcd&units=metric").then(
+            axios.get("https://api.openweathermap.org/data/2.5/weather?lat=" + this.state.latitude + "&lon=" + this.state.longitude + "&appid=(PUT YOUR API KEY HERE)&units=metric").then(
                 function (response) {
                     self.setState({ weather: response.data.weather[0] })
                     self.setState({ main: response.data.main })
@@ -44,7 +44,7 @@ class GetWeather extends React.Component {
                 }
             )
         } else {
-            axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + this.state.name + "&appid=45ebc38311972be87df6b3da347c5fcd&units=metric").then(
+            axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + this.state.name + "&appid=(PUT YOUR API KEY HERE)&units=metric").then(
                 function (response) {
                     self.setState({ weather: response.data.weather[0] })
                     self.setState({ main: response.data.main })
